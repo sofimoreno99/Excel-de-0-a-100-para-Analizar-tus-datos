@@ -43,9 +43,33 @@ Funciones de ingeniería
 Funciones de cubo
 Funciones web
 
+SUMAR
+SUMAR.SI
+SUMAR.SI.CONJUNTO
+CONTAR
+CONTAR.SI
+CONTAR.SI.CONJUNTO
+CONTARA
+PROMEDIO
+PROMEDIO.SI
+PROMEDIO.SI.CONJUNTO
+SI
+Y
+O
+
+
+
+# Funciones anidadas
+
+# Funciones de fecha
+
+# Caracteres comodin
+
+# Buscar, reemplazar, ir a especial
+
 # Auto llenado
 
-# Referencia absoluta $
+# Referencia absoluta, referencia relativa y mixta
 
 # Errores comunes y como solucionarlos
 
