@@ -13,12 +13,12 @@ Porque nos permite organizar y  gestiónar los datos y con ellos cálcular valor
 
 En Excel una podemos realizar operaciones aritméticas simples como por ejemplo: sumar (+), restar (-), multiplicar (*), dividir (/). Para poder realizar cálculos aritméticos en Excel, solo debemos poner un (=) o el signo (+) al inicio de la celda, seguido de la fórmula que deseamos ejecutar.
 
--> + (suma)
--> -(resta o negación)
--> * (multiplicación)
--> / (división)
--> ˆ (potencia)
--> % (porcentaje)
+- + (suma)
+- -(resta o negación)
+- * (multiplicación)
+-  / (división)
+-  ˆ (potencia)
+-  % (porcentaje)
 
 Ejemplo de suma
 =a+b
@@ -150,20 +150,20 @@ IR A ESPECIAL
 # Caracteres comodin
 Los caracteres comodín son caracteres especiales que pueden representar caracteres desconocidos en un valor de texto y son prácticos para encontrar varios elementos con datos similares pero no idénticos. Los caracteres comodín también le pueden ayudar a obtener datos basados en la coincidencia de un patrón específico.
 Sirven para buscar un elemento específico cuando uno no recuerda cómo se escribe. Estos son:
--> ? : Sustituye un solo caracter, es decir, hace coincidir un carácter alfabético individual en una posición concreta.
+- ? : Sustituye un solo caracter, es decir, hace coincidir un carácter alfabético individual en una posición concreta.
 Ejemplo: b?l encuentra bala, billete y bola.
--> * : Sustituye cualquier número de caracteres, es decir, puede utilizar el asterisco (*) en cualquier sitio de una cadena de caracteres. 
+- * : Sustituye cualquier número de caracteres, es decir, puede utilizar el asterisco (*) en cualquier sitio de una cadena de caracteres. 
 Ejemplo: qu* encuentra qué, quién y quizás pero no aquellos ni aunque.
--> ~ seguido de ? o *: permite incorporar el * o ? en el criterio como caracteres y no como caracteres comodin. 
+- ~ seguido de ? o *: permite incorporar el * o ? en el criterio como caracteres y no como caracteres comodin. 
 Ejemplo: ho~*, encuentra hora*, hola*, hoja* 
 [ ]: hace coincidir los caracteres incluidos entre los corchetes.
 Ejemplo: b[ao]l encuentra bala y bola pero no billete.
--> !: Excluye los caracteres incluidos entre los corchetes.
+- !: Excluye los caracteres incluidos entre los corchetes.
 Ejemplo: r[!oc]a encuentra risa y rema pero no roca ni rosa.
 Igual que “[!a]*” encuentra todos los elementos que no empiezan con la letra a.
--> -: Hace coincidir cualquier intervalo de caracteres. Recuerde que debe especificar los caracteres en orden ascendente (de la A a la Z, no de la Z a la A).
+- -: Hace coincidir cualquier intervalo de caracteres. Recuerde que debe especificar los caracteres en orden ascendente (de la A a la Z, no de la Z a la A).
 Ejemplo: a[m-s]a encuentra ama, ata y asa
--> #: Hace coincidir cualquier carácter numérico.
+- #: Hace coincidir cualquier carácter numérico.
 Ejemplo: 1#3 encuentra 103, 113 y 123.
 
 # Auto relleno: 
