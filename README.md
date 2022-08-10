@@ -43,21 +43,58 @@ Funciones de ingeniería
 Funciones de cubo
 Funciones web
 
-- SUMAR
-- SUMAR.SI
-- SUMAR.SI.CONJUNTO
-- CONTAR
-- CONTAR.SI
-- CONTAR.SI.CONJUNTO
-- CONTARA
-- PROMEDIO
-- PROMEDIO.SI
-- PROMEDIO.SI.CONJUNTO
+
+# Funciones de base de dato
+- SUMAR: suma valores. Puede sumar valores individuales, referencias o rangos de celda o una combinación de las tres.
+Sintaxis: =SUMA(rango_de_suma)
+- SUMAR.SI: se usa para sumar los valores intervalo de un rango que cumplan los criterios que haya especificado.
+Sintaxis: =SUMAR.SI(rango; criterio; [rango_suma])
+Rango: Obligatorio. El rango de celdas que se desea evaluar según los criterios. Las celdas de cada rango deben ser números, nombres, matrices o referencias que contengan números. Los valores en blanco y de texto se ignoran. 
+criterio: Obligatorio. Es el criterio en forma de número, expresión, referencia de celda, texto o función que determina las celdas que va a sumar. Se pueden incluir caracteres comodín. Por ejemplo, los criterios pueden expresarse como 32, ">32", B5, "3?", "manzanas*", “*~” u HOY().
+Importante: Cualquier criterio de texto o cualquier criterio que incluya los símbolos lógicos o matemáticos debe estar entre comillas dobles ("). Si el criterio es numérico, las comillas dobles no son necesarias.
+Rango_suma: Opcional. Son las celdas reales que se sumarán, si es que desea sumar celdas a las ya especificadas en el argumento rango. Si omite el argumento rango_suma, Excel suma las celdas especificadas en el argumento rango (las mismas celdas a las que se aplica el criterio).
+- SUMAR.SI.CONJUNTO: igual que la funcion SUMAR.SI, pero con mas de un criterio.
+Sintaxis: =SUMAR.SI.CONJUNTO(rango_suma; rango_criterios1; criterios1; [rango_criterios2; criterios2];...)
+- CONTAR: cuenta la cantidad de celdas que contienen números y cuenta los números dentro de la lista de argumentos, se usa para obtener la cantidad de entradas en un campo de número de un rango o matriz de números.
+Sintaxis: =CONTAR(valor1; [valor2]; ...)
+valor1: Obligatorio. Primer elemento, referencia de celda o rango en el que desea contar números.
+valor2: Opcional. Hasta 255 elementos, celdas de referencia o rangos adicionales en los que desea contar números.
+- CONTAR.SI: sirve para contar el número de celdas que cumplen un criterio.
+- Sintaxis: =CONTAR.SI(rango;criterios)
+- CONTAR.SI.CONJUNTO: Es igual a la funcion CONTAR.SI pero con mas de un criterio, aplica criterios a las celdas de varios rangos y cuenta el número de veces que se cumplen todos los criterios.
+Sintaxis: =CONTAR.SI.CONJUNTO(rango_criterios1; criterios1; [rango_criterios2; criterios2];…)
+- CONTARA: cuenta la cantidad de celdas que no están vacías en un intervalo.
+Sintaxis: =CONTARA(valor1; [valor2]; ...)
+- PROMEDIO: Devuelve el promedio (media aritmética) de los argumentos. 
+Sintaxis: =PROMEDIO(número1; [número2]; ...)
+Número1: Obligatorio. El primer número, referencia de celda o rango para el cual desea el promedio.
+Número2, ...: Opcional. Números, referencias de celda o rangos adicionales para los que desea el promedio, hasta un máximo de 255.
+- PROMEDIO.SI: Devuelve el promedio (media aritmética) de todas las celdas de un rango que cumplen unos criterios determinados.
+Sintaxis: =PROMEDIO.SI(rango; criterios; [rango_promedio])
+Rango: Obligatorio. Una o más celdas cuyo promedio se desea obtener que incluyan números, o nombres, matrices o referencias que contengan números.
+Criterio: Obligatorio. Criterio en forma de número, expresión, referencia de celda o texto que determina las celdas cuyo promedio se va a obtener. Por ejemplo, los criterios pueden expresarse como 32, "32", ">32", "manzanas" o B4.
+Rango_promedio: Opcional. Conjunto real de celdas cuyo promedio se va a calcular. Si se omite, se utiliza un rango.
+- PROMEDIO.SI.CONJUNTO: Igual que la funcion PROMEDIO.SI pero con mas de un criterio. 
+- MIN
+- MAX
+- PRODUCTO
+- 
 
 # Funciones Lógicas
-- SI
-- Y
-- O
+- SI: permite realizar comparaciones lógicas entre un valor y un resultado que espera, una instrucción SI puede tener dos resultados. El primer resultado es si la comparación es Verdadera y el segundo si la comparación es Falsa.
+Sintaxis: =SI(Prueba_logica,Valor_si_verdadero,Valor_si_falso)
+(Prueba_lógica (obligatorio): Expresión lógica que será evaluada para conocer si el resultado es VERDADERO o FALSO.
+Valor_si_verdadero (opcional): El valor que se devolverá en caso de que el resultado de la Prueba_lógica sea VERDADERO.
+Valor_si_falso (opcional): El valor que se devolverá si el resultado de la evaluación es FALSO.
+- Y: expresion logica para determinar si todas las condiciones de una prueba son VERDADERAS. 
+Sintaxis: =SI(Valor_logico1,Valor_logico2)
+Valor_lógico1 (obligatorio): Expresión lógica que será evaluada por la función.
+Valor_lógico2 (opcional): Expresiones lógicas a evaluar, opcional hasta un máximo de 255.
+La función Y solamente regresará el valor VERDADERO si todas las expresiones lógicas evaluadas son verdaderas. Bastará con que una sola expresión sea falsa para que la función Y tenga un resultado FALSO.
+- O: Expresion logica que nos muestra verdadero si alguno de los argumentos especificados es verdadero desde el punto de vista lógico, y falso si todos los argumentos son falsos.
+Sintaxis: O((Valor_logico1,Valor_logico2)
+
+# Funciones anidadas
 
 # Funciones de búsqueda y referencia
 
@@ -137,14 +174,7 @@ Núm_de_serie: Obligatorio. Es la fecha del año que desea buscar. Debe especifi
  FECHANUMERO: 
 
 
-
 # IR A ESPECIAL
-
-
-
-
-
-# Funciones anidadas
 
 
 # Caracteres comodin
