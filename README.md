@@ -13,12 +13,12 @@ Porque nos permite organizar y  gestiónar los datos y con ellos cálcular valor
 
 En Excel una podemos realizar operaciones aritméticas simples como por ejemplo: sumar (+), restar (-), multiplicar (*), dividir (/). Para poder realizar cálculos aritméticos en Excel, solo debemos poner un (=) o el signo (+) al inicio de la celda, seguido de la fórmula que deseamos ejecutar.
 
-+ (suma)
-- (resta o negación)
-* (multiplicación)
-/ (división)
-ˆ (potencia)
-% (porcentaje)
+ + (suma)
+ - (resta o negación)
+ * (multiplicación)
+ / (división)
+ ˆ (potencia)
+ % (porcentaje)
 
 Ejemplo de suma
 =a+b
@@ -61,7 +61,13 @@ O
 
 # Funciones de búsqueda y referencia
 
-BUSCAR
+BUSCAR: Permite buscar en una sola fila o columna y encontrar un valor desde la misma posición en una segunda fila o columna.
+Sintaxis: =BUSCAR(valor_buscado; vector_de_comparación; [vector_resultado])
+valor buscado: Obligatorio. Es el valor que busca la función BUSCAR en el primer vector, puede ser un número, texto, un valor lógico o un nombre de referencia que se refiere a un valor.
+Vector_de_comparación: Obligatorio. Es un rango que solo contiene una fila o una columna, pueden ser texto, números o valores lógicos.
+vector_resultado    Opcional. Un rango que solo contiene una fila o una columna. El argumento vector_result debe tener el mismo tamaño que vector_de_comparación. Debe tener el mismo tamaño.
+Si la función BUSCAR no puede encontrar el valor_buscado, la función muestra el valor mayor en vector_de_comparación, que es menor o igual que el valor_buscado.
+Si el valor_buscado es menor que el menor valor del vector_de_comparación, BUSCAR devuelve el valor de error #N/A.
 
 BUSCARV: Nos permite hacer una búsqueda de un valor dentro de la primera columna de un rango de datos.
 Sintaxis : BUSCARV(valor_deseado,rango_de_busqueda,columna_de_resultado, V/F) 
@@ -97,6 +103,39 @@ CONCATENAR: Nos permite unir dos o más cadenas de texto en una misma celda lo c
 Sintaxis: = CONCATENAR (texto1, texto2).
 Texto 1 y texto 2 pueden ser celdas referenciadas. Tambien se puede poner por ejemplo: = CONCATENAR (A1," ", B1),  con las comillas separadas por un espacio estamos indicando que los dos textos se separen por un espacio. 
 
+COINCIDIR
+
+
+# Funciones de fecha
+AHORA: Devuelve el número de serie de la fecha y hora actuales.
+Sintaxis: =AHORA()
+La sintaxis de la función AHORA no tiene argumentos.
+
+FECHA: Use la función FECHA de Excel cuando necesite tomar tres valores diferentes y combinarlos para formar una fecha. Sintaxis: =(dia,mes,año) pueden introducirse manualmente los valores o referenciando celdas.
+Sintaxis: FECHA(año; mes; día)
+
+SIFECHA: Calcula el número de días, meses o años entre dos fechas.
+Sintaxis: SIFECHA(fecha_inicial;fecha_final;unidad)
+fecha_inicial: Una fecha que representa la primera o la fecha inicial de un período determinado.
+fecha_final: Una fecha que representa la última del período o al fecha de finalización.
+El tipo de información que desea devolver, donde:
+Unidad :Devuelve
+"Y": El número de años completos en el período.
+"M": El número de meses completos en el período.
+"D": El número de días en el período.
+"MD": La diferencia entre los días en fecha_inicial y fecha_final. Los meses y años de las fechas se pasan por alto.
+"YM": La diferencia entre los meses de fecha_inicial y fecha_final. Los días y años de las fechas se pasan por alto
+"YD": La diferencia entre los días de fecha_inicial y fecha_final. Los años de las fechas se pasan por alto.
+
+AÑO: Sintaxis: AÑO(núm_de_serie)
+Núm_de_serie: Obligatorio. Es la fecha del año que desea buscar. Debe especificar las fechas con la función FECHA o como resultado de otras fórmulas o funciones.
+MES: Sintaxis: MES(núm_de_serie) . IDEM AÑO.
+DIA: Sintaxis: DIA(núm_de_serie). IDEM AÑO. 
+HORA: Sintaxis: DIA(núm_de_serie). IDEM AÑO.
+MINUTO: Sintaxis: MINUTO(núm_de_serie). IDEM AÑO.
+
+FECHANUMERO: 
+
 
 
 IR A ESPECIAL
@@ -107,12 +146,34 @@ IR A ESPECIAL
 
 # Funciones anidadas
 
-# Funciones de fecha
 
 # Caracteres comodin
+Los caracteres comodín son caracteres especiales que pueden representar caracteres desconocidos en un valor de texto y son prácticos para encontrar varios elementos con datos similares pero no idénticos. Los caracteres comodín también le pueden ayudar a obtener datos basados en la coincidencia de un patrón específico.
+Sirven para buscar un elemento específico cuando uno no recuerda cómo se escribe. Estos son:
+? : Sustituye un solo caracter, es decir, hace coincidir un carácter alfabético individual en una posición concreta.
+Ejemplo: b?l encuentra bala, billete y bola.
+* : Sustituye cualquier número de caracteres, es decir, puede utilizar el asterisco (*) en cualquier sitio de una cadena de caracteres. 
+Ejemplo: qu* encuentra qué, quién y quizás pero no aquellos ni aunque.
+~ seguido de ? o *: permite incorporar el * o ? en el criterio como caracteres y no como caracteres comodin. 
+Ejemplo: ho~*, encuentra hora*, hola*, hoja* 
+[ ]: hace coincidir los caracteres incluidos entre los corchetes.
+Ejemplo: b[ao]l encuentra bala y bola pero no billete.
+!: Excluye los caracteres incluidos entre los corchetes.
+Ejemplo: r[!oc]a encuentra risa y rema pero no roca ni rosa.
+Igual que “[!a]*” encuentra todos los elementos que no empiezan con la letra a.
+-: Hace coincidir cualquier intervalo de caracteres. Recuerde que debe especificar los caracteres en orden ascendente (de la A a la Z, no de la Z a la A).
+Ejemplo: a[m-s]a encuentra ama, ata y asa
+#: Hace coincidir cualquier carácter numérico.
+Ejemplo: 1#3 encuentra 103, 113 y 123.
 
-
-# Auto llenado
+# Auto relleno: 
+Sirve para rellenar celdas con datos que siguen un patrón o que se basan en datos de otras celdas.
+¿Cómo realizarlo?
+Seleccione las celdas que quiera usar como base para rellenar celdas adicionales.
+Para una serie como “1, 2, 3, 4, 5…”, escriba 1 y 2 en las primeras dos celdas. Para la serie “2, 4, 6, 8…”, escriba 2 y 4.
+Para la serie “2, 2, 2, 2…”, escriba 2 solo en la primera celda.
+En la esquina inferior derecha aparece un cuadrado negro que es el controlador de relleno, haga click y arrastrelo en las celdas que desea que se complete el autorellenbo. 
+Si es necesario, haga clic en un boton que aparece que es de las: Opciones de autorrelleno y seleccione la opción que quiera.
 
 # Referencia absoluta, referencia relativa y mixta. 
 Las referencias de una celda en una hoja de Excel, es la direccion dentro de la hoja y  siempre constará de dos partes: la primera parte indicará la letra (o letras) de la columna a la que pertenece y la segunda parte indicará su número de fila.
