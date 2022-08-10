@@ -53,9 +53,55 @@ CONTARA
 PROMEDIO
 PROMEDIO.SI
 PROMEDIO.SI.CONJUNTO
+
+# Funciones Lógicas
 SI
 Y
 O
+
+# Funciones de búsqueda y referencia
+
+BUSCAR
+
+BUSCARV: Nos permite hacer una búsqueda de un valor dentro de la primera columna de un rango de datos.
+Sintaxis : BUSCARV(valor_deseado,rango_de_busqueda,columna_de_resultado, V/F) 
+-valor_deseado: Lo que desea buscar
+-rango_de_busqueda: donde se desea buscarlo, el rango debe empezar en la columna donde se desea buscar el valor. 
+-columna_de_resultad: el número de columna en el rango que contiene el valor a devolver.
+-V/F: devuelve una Coincidencia exacta o Coincidencia aproximada, indicada como 1/VERDADERO, 1/FALSO)
+Debemos recordar que el valor del primer argumento de la función será buscado siempre en la primera columna de la tabla de datos. No es posible buscar en una columna diferente que no sea la primera columna. El segundo argumento de la función indica la totalidad del rango que contiene los datos. En este rango es importante asegurase de incluir la columna que vamos a necesitar como resultado.El último argumento de la función es opcional, pero si no proporcionamos un valor, la función BUSCARV hará una búsqueda aproximada. Para que la función realice una búsqueda exacta debemos colocar el valor falso y obtendremos como resultado el valor de la columna que hayamos indicado.
+Si la función BUSCARV no encuentra el valor en la columna uno, devolverá el error #N/A.
+
+BUSCARH: busca un valor dentro de una fila y devuelve el valor que ha sido encontrado o un error #N/A en caso de no haberlo encontrado. 
+Sintaxis: igual a la sintaxis de BUSCARV. pero la busqueda se realiza en la primera fila del rango, y en el tercer argumento se debe aclarar la posicion de la fila que contiene el resultado a devolver. 
+Si la función BUSCARH no encuentra el valor en la fila uno, devolverá el error #N/A.
+
+REEMPLAZAR: reemplaza parte de una cadena de texto, en función del número de caracteres que especifique, por una cadena de texto diferente.
+Sintaxis: =REEMPLAZAR(texto_original, núm_inicial, núm_de_caracteres, texto_nuevo)
+texto_original:Obligatorio. Es el texto en el que desea reemplazar algunos caracteres.
+núm_inicial:Obligatorio. Es la posición del carácter dentro de texto_original que desea reemplazar por texto_nuevo.
+núm_de_caracteres:Obligatorio. Es el número de caracteres de texto_original que se desea que REEMPLAZAR reemplace por texto_nuevo.
+texto_nuevo:Obligatorio. Es el texto que reemplazará los caracteres de texto_original.
+
+REEMPLAZARB: reemplaza parte de una cadena de texto, en función del número de bytes que especifique, por una cadena de texto diferente.
+Sintaxis: =REEMPLAZARB(texto_original, núm_inicial, núm_bytes, texto_nuevo)
+Es igual que la funcion reemplazar pero en vez de especificar numero de caracteres, se especifica numero de bytes.
+
+EXTRAE: Nos sirve para extraer determinado número de caracteres de una cadena de texto. 
+Sintaxis: = EXTRAE (texto, posición_inicial, núm_de_caracteres)
+-texto: La cadena de texto original que contiene el dato que necesitamos extraer.
+-posición_inicial: la posición del primer carácter que se desea extraer.
+-núm_de_caracteres: número de caracteres a extraer.
+
+CONCATENAR: Nos permite unir dos o más cadenas de texto en una misma celda lo cual es muy útil cuando nos encontramos manipulando bases de datos y necesitamos hacer una concatenación.
+Sintaxis: = CONCATENAR (texto1, texto2).
+Texto 1 y texto 2 pueden ser celdas referenciadas. Tambien se puede poner por ejemplo: = CONCATENAR (A1," ", B1),  con las comillas separadas por un espacio estamos indicando que los dos textos se separen por un espacio. 
+
+
+
+IR A ESPECIAL
+
+
 
 
 
@@ -65,11 +111,18 @@ O
 
 # Caracteres comodin
 
-# Buscar, reemplazar, ir a especial
 
 # Auto llenado
 
-# Referencia absoluta, referencia relativa y mixta
+# Referencia absoluta, referencia relativa y mixta. 
+Las referencias de una celda en una hoja de Excel, es la direccion dentro de la hoja y  siempre constará de dos partes: la primera parte indicará la letra (o letras) de la columna a la que pertenece y la segunda parte indicará su número de fila.
+Cuando hablamos de los tipos de referencia, estamos hablando de los tipos de comportamiento que tienen las referencias al ser copiadas o trasladadas a otra celda. 
+
+REFERENCIA RELATIVA: De manera predeterminada, las referencias en Excel son relativas. El término relativo significa que al momento de copiar una fórmula, Excel modificará las referencias en relación a la nueva posición donde se está haciendo la copia de la fórmula. Por ejemplo si en la celda C1, escribimos =A1+B1. Cuando copiemos la formula en la celda C2, no realizara la operacion referenciando las celdas A1 y B1, sino que realizara la operacion con las celdas A2 y B2, porque cambia la referencia segun la posicion con las celdas referenciadas. 
+
+REFERENCIA ABSOLUTA: Hay ocasiones en las que necesitamos “fijar” la referencia a una celda de manera que permanezca igual aún después de ser copiada. Si queremos impedir que Excel modifique las referencias de una celda al momento de copiar la fórmula, entonces debemos convertir una referencia relativa en absoluta y eso lo podemos hacer anteponiendo el símbolo “$” a la letra de la columna y al número de la fila de la siguiente manera: si seguimos con el ejemplo anterior si en la celda C1 escribimos la formula = $A$1 + $B$1, y copiamos la formula a la celda C2, la operacion que se va a realizar va a seguir siendo con las celdas A1 y B1 ya que las hemos "fijado". 
+
+REFERENCIA MIXTA: Es similar a la referencia absoluta ya que fijamos una parte de la celda referenciada, por ejemplo su numero de fila o numero de columna. Por ejemplo: Si en la celda C1 escribimos =$A1 + $B1, lo que estamos fijando es el numero de columna a utilizar, por lo que si copiamos la formula a la celda C2, se realizara la formula con $A2 + $B2.
 
 # Errores comunes y como solucionarlos
 
