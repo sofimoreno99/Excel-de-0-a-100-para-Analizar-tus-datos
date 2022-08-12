@@ -13,13 +13,12 @@ Porque nos permite organizar y  gestiónar los datos y con ellos cálcular valor
 
 En Excel una podemos realizar operaciones aritméticas simples como por ejemplo: sumar (+), restar (-), multiplicar (*), dividir (/). Para poder realizar cálculos aritméticos en Excel, solo debemos poner un (=) o el signo (+) al inicio de la celda, seguido de la fórmula que deseamos ejecutar.
 
-- + (suma)
-- -(resta o negación)
-- * (multiplicación)
--  / (división)
--  ˆ (potencia)
--  % (porcentaje)
-
+- Suma (+)
+- Resta o negación (-)
+- Multiplicación (*)
+- División (/)
+- Potencia (^)
+- Porcentaje (%)
 Ejemplo de suma
 =a+b
 
@@ -45,40 +44,61 @@ Estas son:
 
 
 # Funciones de base de dato
+
 - SUMAR: suma valores. Puede sumar valores individuales, referencias o rangos de celda o una combinación de las tres.
 Sintaxis: =SUMA(rango_de_suma)
+
 - SUMAR.SI: se usa para sumar los valores intervalo de un rango que cumplan los criterios que haya especificado.
 Sintaxis: =SUMAR.SI(rango; criterio; [rango_suma])
 Rango: Obligatorio. El rango de celdas que se desea evaluar según los criterios. Las celdas de cada rango deben ser números, nombres, matrices o referencias que contengan números. Los valores en blanco y de texto se ignoran. 
 criterio: Obligatorio. Es el criterio en forma de número, expresión, referencia de celda, texto o función que determina las celdas que va a sumar. Se pueden incluir caracteres comodín. Por ejemplo, los criterios pueden expresarse como 32, ">32", B5, "3?", "manzanas*", “*~” u HOY().
 Importante: Cualquier criterio de texto o cualquier criterio que incluya los símbolos lógicos o matemáticos debe estar entre comillas dobles ("). Si el criterio es numérico, las comillas dobles no son necesarias.
 Rango_suma: Opcional. Son las celdas reales que se sumarán, si es que desea sumar celdas a las ya especificadas en el argumento rango. Si omite el argumento rango_suma, Excel suma las celdas especificadas en el argumento rango (las mismas celdas a las que se aplica el criterio).
+
 - SUMAR.SI.CONJUNTO: igual que la funcion SUMAR.SI, pero con mas de un criterio.
 Sintaxis: =SUMAR.SI.CONJUNTO(rango_suma; rango_criterios1; criterios1; [rango_criterios2; criterios2];...)
+
 - CONTAR: cuenta la cantidad de celdas que contienen números y cuenta los números dentro de la lista de argumentos, se usa para obtener la cantidad de entradas en un campo de número de un rango o matriz de números.
 Sintaxis: =CONTAR(valor1; [valor2]; ...)
 valor1: Obligatorio. Primer elemento, referencia de celda o rango en el que desea contar números.
 valor2: Opcional. Hasta 255 elementos, celdas de referencia o rangos adicionales en los que desea contar números.
+
 - CONTAR.SI: sirve para contar el número de celdas que cumplen un criterio.
 - Sintaxis: =CONTAR.SI(rango;criterios)
+
 - CONTAR.SI.CONJUNTO: Es igual a la funcion CONTAR.SI pero con mas de un criterio, aplica criterios a las celdas de varios rangos y cuenta el número de veces que se cumplen todos los criterios.
 Sintaxis: =CONTAR.SI.CONJUNTO(rango_criterios1; criterios1; [rango_criterios2; criterios2];…)
+
 - CONTARA: cuenta la cantidad de celdas que no están vacías en un intervalo.
 Sintaxis: =CONTARA(valor1; [valor2]; ...)
+
 - PROMEDIO: Devuelve el promedio (media aritmética) de los argumentos. 
 Sintaxis: =PROMEDIO(número1; [número2]; ...)
 Número1: Obligatorio. El primer número, referencia de celda o rango para el cual desea el promedio.
 Número2, ...: Opcional. Números, referencias de celda o rangos adicionales para los que desea el promedio, hasta un máximo de 255.
+
 - PROMEDIO.SI: Devuelve el promedio (media aritmética) de todas las celdas de un rango que cumplen unos criterios determinados.
 Sintaxis: =PROMEDIO.SI(rango; criterios; [rango_promedio])
 Rango: Obligatorio. Una o más celdas cuyo promedio se desea obtener que incluyan números, o nombres, matrices o referencias que contengan números.
 Criterio: Obligatorio. Criterio en forma de número, expresión, referencia de celda o texto que determina las celdas cuyo promedio se va a obtener. Por ejemplo, los criterios pueden expresarse como 32, "32", ">32", "manzanas" o B4.
 Rango_promedio: Opcional. Conjunto real de celdas cuyo promedio se va a calcular. Si se omite, se utiliza un rango.
+
 - PROMEDIO.SI.CONJUNTO: Igual que la funcion PROMEDIO.SI pero con mas de un criterio. 
-- MIN
-- MAX
-- PRODUCTO
-- 
+
+- MIN: Devuelve el valor mínimo de un conjunto de valores.
+Sintaxis: =MIN(número1, [número2], ...)
+
+- MAX: Devuelve el valor máximo de un conjunto de valores.
+Sintaxis: =MAX(número1, [número2], ...)
+
+- PRODUCTO: La función PRODUCTO multiplica todos los números dados como argumentos y devuelve el producto.También puede realizar la misma operación con el operador matemático multiplique (*); por ejemplo, =A1 * A2.La función PRODUCTO es útil cuando necesita multiplicar varias celdas juntas. Por ejemplo, la fórmula =PRODUCTO(A1:A3, C1:C3) equivale a =A1 * A2 * A3 * C1 * C2 * C3.
+- Sintaxis: =PRODUCTO(número1, [número2], ...)
+
+- DESVESTA: Calcula la desviación estándar de una muestra. La desviación estándar es la medida de la dispersión de los valores respecto a la media (valor promedio).
+Sintaxis: =DESVESTA(valor1, [valor2], ...)
+
+-VAR: Calcula la varianza de una muestra.
+Sintaxis: =VAR(número1,[número2],...)
 
 # Funciones Lógicas
 
