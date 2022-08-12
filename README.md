@@ -30,18 +30,18 @@ Una fórmula es un método  práctico convencional que, a partir de determinados
 
 En Excel debemos escribir las fórmulas siempre comenzando con el signo (=) seguido de la operacion que querramos realizar y podemos hacerlo introduciendo a mano los valores que deseamos utilizar, o referenciando celdas que contienen los valores, se referecian apretando sobre la celda que queremos utilizar, o colocando la letra de la columna seguido del numero de fila. Existen funciones integradas, que han sido predefinidas con la fabricacion de Excel y nos facilitan a la hora de realizar calculos ya que solo debemos introducir los valores que deseamos calcular como los argumentos de la formula. Estan divididas en categorias segun las operaciones que necesitemos realizar. 
 Estas son: 
-Funciones de búsqueda y referencia
-Funciones de texto
-Funciones lógicas
-Funciones de fecha y hora
-Funciones de base de datos
-Funciones matemáticas y trigonométricas
-Funciones financieras
-Funciones estadísticas
-Funciones de información
-Funciones de ingeniería
-Funciones de cubo
-Funciones web
+- Funciones de búsqueda y referencia
+- Funciones de texto
+- Funciones lógicas
+- Funciones de fecha y hora
+- Funciones de base de datos
+- Funciones matemáticas y trigonométricas
+- Funciones financieras
+- Funciones estadísticas
+- Funciones de información
+- Funciones de ingeniería
+- Funciones de cubo
+- Funciones web
 
 
 # Funciones de base de dato
