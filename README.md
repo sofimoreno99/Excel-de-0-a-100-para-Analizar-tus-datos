@@ -81,16 +81,19 @@ Rango_promedio: Opcional. Conjunto real de celdas cuyo promedio se va a calcular
 - 
 
 # Funciones Lógicas
+
 - SI: permite realizar comparaciones lógicas entre un valor y un resultado que espera, una instrucción SI puede tener dos resultados. El primer resultado es si la comparación es Verdadera y el segundo si la comparación es Falsa.
 Sintaxis: =SI(Prueba_logica,Valor_si_verdadero,Valor_si_falso)
 (Prueba_lógica (obligatorio): Expresión lógica que será evaluada para conocer si el resultado es VERDADERO o FALSO.
 Valor_si_verdadero (opcional): El valor que se devolverá en caso de que el resultado de la Prueba_lógica sea VERDADERO.
 Valor_si_falso (opcional): El valor que se devolverá si el resultado de la evaluación es FALSO.
+
 - Y: expresion logica para determinar si todas las condiciones de una prueba son VERDADERAS. 
 Sintaxis: =SI(Valor_logico1,Valor_logico2)
 Valor_lógico1 (obligatorio): Expresión lógica que será evaluada por la función.
 Valor_lógico2 (opcional): Expresiones lógicas a evaluar, opcional hasta un máximo de 255.
 La función Y solamente regresará el valor VERDADERO si todas las expresiones lógicas evaluadas son verdaderas. Bastará con que una sola expresión sea falsa para que la función Y tenga un resultado FALSO.
+
 - O: Expresion logica que nos muestra verdadero si alguno de los argumentos especificados es verdadero desde el punto de vista lógico, y falso si todos los argumentos son falsos.
 Sintaxis: O((Valor_logico1,Valor_logico2)
 
@@ -140,8 +143,28 @@ Sintaxis: = EXTRAE (texto, posición_inicial, núm_de_caracteres)
 Sintaxis: = CONCATENAR (texto1, texto2).
 Texto 1 y texto 2 pueden ser celdas referenciadas. Tambien se puede poner por ejemplo: = CONCATENAR (A1," ", B1),  con las comillas separadas por un espacio estamos indicando que los dos textos se separen por un espacio. 
 
-- COINCIDIR
+- LEN: devuelve el número de caracteres de una cadena de texto.
+Sintaxis: =LEN(texto)
+Texto: es el texto cuya longitud se desea obtener. Los espacios cuentan como caracteres.
 
+- COINCIDIR:  busca un elemento determinado en un intervalo de celdas y después devuelve la posición relativa de dicho elemento en el rango. Por ejemplo, si el rango A1:A3 contiene los valores 5, 25 y 38, la fórmula =COINCIDIR(25,A1:A3,0) devuelve el número 2, porque 25 es el segundo elemento del rango.
+Sintaxis: =COINCIDIR(valor_buscado,matriz_buscada, [tipo_de_coincidencia])
+
+- DERECHA: Devuelve un valor de tipo Variant (String) que contiene un número especificado de caracteres del lado derecho de una cadena.
+Sintaxis: =Derecha( cadena, longitud )
+
+- IZQUIERDA: Devuelve un valor de tipo Variant (String) que contiene un número específico de caracteres a partir del lado izquierdo de una cadena.
+Sintaxis: =Izquierda( cadena, longitud )
+
+- MID: devuelve un número concreto de caracteres de una cadena de texto, empezando en la posición especificada y basándose en el número de caracteres que se especifique.
+Sintaxis: MID(texto,posición_inicial,núm_de_caracteres)
+Texto: Cadena de texto que contiene los caracteres que se desea extraer.
+Posición_inicial: Posición del primer carácter que se desea extraer del texto. La posición_inicial del primer carácter de texto es 1, y así sucesivamente.
+Núm_de_caracteres: especifica el número de caracteres del texto que MID debe devolver.
+
+- ESPACIOS: Quita los espacios iniciales, finales y repetidos del texto. 
+Sintaxis: =ESPACIOS(texto)
+texto: String o referencia a una celda que contiene una string a la que se le van a quitar espacios.
 
 # Funciones de fecha
 - AHORA: Devuelve el número de serie de la fecha y hora actuales.
@@ -214,6 +237,11 @@ Cuando hablamos de los tipos de referencia, estamos hablando de los tipos de com
 - REFERENCIA ABSOLUTA: Hay ocasiones en las que necesitamos “fijar” la referencia a una celda de manera que permanezca igual aún después de ser copiada. Si queremos impedir que Excel modifique las referencias de una celda al momento de copiar la fórmula, entonces debemos convertir una referencia relativa en absoluta y eso lo podemos hacer anteponiendo el símbolo “$” a la letra de la columna y al número de la fila de la siguiente manera: si seguimos con el ejemplo anterior si en la celda C1 escribimos la formula = $A$1 + $B$1, y copiamos la formula a la celda C2, la operacion que se va a realizar va a seguir siendo con las celdas A1 y B1 ya que las hemos "fijado". 
 
 - REFERENCIA MIXTA: Es similar a la referencia absoluta ya que fijamos una parte de la celda referenciada, por ejemplo su numero de fila o numero de columna. Por ejemplo: Si en la celda C1 escribimos =$A1 + $B1, lo que estamos fijando es el numero de columna a utilizar, por lo que si copiamos la formula a la celda C2, se realizara la formula con $A2 + $B2.
+# Herramientas para limpieza de datos
+# - Formato condicional
+El formato condicional cambia el aspecto de un rango de celdas en función de una condición (o criterios). Puede usar formato condicional para resaltar celdas que contienen valores que cumplen cierta condición. También puede aplicar formato a un rango de celdas y variar el formato exacto cuando varía el valor de cada celda.
+# Eliminar duplicados 
+
 
 # Errores comunes y como solucionarlos
 
