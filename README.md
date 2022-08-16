@@ -302,3 +302,10 @@ La funcion se llama "Texto en columnas" nos va a permitir separar texto en filas
 
 
 
+# IMPORTRANGE
+# QUERY
+# FILTER
+
+
+
+
