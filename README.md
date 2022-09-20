@@ -100,6 +100,54 @@ Sintaxis: =DESVESTA(valor1, [valor2], ...)
 - VAR: Calcula la varianza de una muestra.
 Sintaxis: =VAR(número1,[número2],...)
 
+- COCIENTE: devuelve la parte entera de una division. 
+Sintaxis:COCIENTE(numerador, denominador)
+
+La sintaxis de la función COCIENTE tiene los siguientes argumentos:
+
+Numerador    Obligatorio. Es el dividendo.
+
+Denominador    Obligatorio. Es el divisor.
+
+- FACT: Devuelve el factorial de un número. El factorial de un número es igual a 1*2*3*...* número.
+
+Sintaxis
+FACT(número)
+
+Número: es el número no negativo cuyo factorial se desea obtener. Si el valor de número no es un entero, se truncará.
+
+- POTENCIA: (POWER en inglés) Eleva un número a una potencia especificada.
+
+Sintaxis: POTENCIA(número, potencia)
+
+- PRODUCTO: La función PRODUCTO multiplica todos los números dados como argumentos y devuelve el producto.
+Sintaxis: PRODUCTO(número1, [número2], ...)
+
+La sintaxis de la función PRODUCTO tiene los siguientes argumentos:
+
+Número1    Obligatorio. Es el primer número o intervalo que desea multiplicar.
+
+Número2, ...    Opcional. Son los números o rangos adicionales que desea multiplicar, hasta un máximo de 255 argumentos.
+
+- RAIZ: Devuelve la raíz cuadrada de un número.
+
+Sintaxis: RAIZ(número)
+
+La sintaxis de la función RAIZ tiene los siguientes argumentos:
+
+Número    Obligatorio. Es el número cuya raíz cuadrada desea obtener.
+
+- RESIDUO: Devuelve el residuo o resto de la división entre número y divisor. El resultado tiene el mismo signo que divisor.
+
+Sintaxis: RESIDUO(número, divisor)
+
+La sintaxis de la función RESIDUO tiene los siguientes argumentos:
+
+Número    Obligatorio. Es el número cuyo resto desea obtener.
+
+Divisor    Obligatorio. Es el número por el cual desea dividir el argumento número.
+
+
 # Funciones Lógicas
 
 - SI: permite realizar comparaciones lógicas entre un valor y un resultado que espera, una instrucción SI puede tener dos resultados. El primer resultado es si la comparación es Verdadera y el segundo si la comparación es Falsa.
@@ -256,11 +304,12 @@ Cuando hablamos de los tipos de referencia, estamos hablando de los tipos de com
 
 # Herramientas para limpieza de datos
 
+## Quitar filas duplicadas
 
-# - Formato condicional
+- Formato condicional
 El formato condicional cambia el aspecto de un rango de celdas en función de una condición (o criterios). Puede usar formato condicional para resaltar celdas que contienen valores que cumplen cierta condición. También puede aplicar formato a un rango de celdas y variar el formato exacto cuando varía el valor de cada celda.
 
-# Eliminar duplicados
+- Eliminar duplicados
  Use el formato condicional para buscar y resaltar datos duplicados o filtrar duplicados primero. De esa manera puede revisar duplicados y decidir si desea eliminarlos.
  Cuando use la característica Quitar duplicados, los datos duplicados se eliminarán de manera permanente. Antes de eliminar los duplicados, es una buena idea copiar los datos originales a otra hoja de cálculo para que no pierda ninguna información de forma accidental.
 
@@ -268,13 +317,29 @@ Primero: seleccione el rango de celdas con valores duplicados que desea quitar.
 Segundo: Haga clic en Datos > Quitar duplicados y, a continuación, debajo de Columnas, active o desactive las columnas donde desea eliminar los duplicados.
 Tercero: Haga click en aceptar.
 
-# BUSCAR Y REEMPLAZAR
-
-# Cambiar a mayuscula, minuscula o nompropio.
-
+- IR A ESPECIAL:
+El cuadro de ir a especial nos sirve para localizar ciertos tipos de celda dentro de la hoja de cálculo. Podemos acceder al cuadro Ir a especial desde el extremo derecho de la ficha Inicio. Solo tenemos que pulsar en Buscar y seleccionar y luego en Ir a especial. Una vez se abre el cuadro, podemos elegir entre otras opciones, comentarios, constantes, fórmulas, espacios en blanco, etc… 
 
 
-# Quitar espacios y caracteres no imprimibles del texto
+- UNICOS: La función UNICOS devuelve una lista de valores únicos de una lista o rango. 
+
+Sintaxis: UNICO( rango) 
+
+
+## Buscar y reemplazar texto 
+
+Utilizar los comandos buscar y buscar y reemplazar. Como tambien las funciones de BUSCARV, BUSCARH, DERECHA, IZQUIERDA, EXTRAE, SUSTITUIR, entre otras. 
+
+## Cambiar a mayuscula, minuscula o nompropio.
+
+A veces el texto es una mezcla, especialmente cuando se refiere a las mayúsculas y minúsculas. Al usar una o varias de las tres funciones de mayúsculas o minúsculas, puedes convertir texto en minúsculas, como direcciones de correo electrónico, mayúsculas, como los códigos, o mayúsculas o minúsculas, como nombres o apellidos.
+
+- MAYUSC(rango a convertir)
+- MINUSC( rango a convertir)
+- NOMPROPIO(rango a convertir) : pone la primera letra mayuscula y las otras minusculas. 
+
+
+## Quitar espacios y caracteres no imprimibles del texto
 
 A veces los valores de texto contienen caracteres de espacio incrustado en la primera parte, al final o en varios sitios.
 
@@ -311,7 +376,7 @@ Texto_nuevo Obligatorio. Es el texto por el que deseas reemplazar el texto_origi
 Núm_de_ocurrencia Opcional. Especifica la instancia de texto_original que se desea reemplazar por texto_nuevo. Si especifica el argumento núm_de_ocurrencia, solo se remplaza esa instancia de texto_original. De lo contrario, todas las instancias de texto_original en texto se sustituirán por texto_nuevo.
 
 
-# Convertir fechas almacenadas como texto en fechas
+## Convertir fechas almacenadas como texto en fechas
 
 A veces, las fechas pueden adquirir formato de texto y almacenarse como texto en las celdas. Por ejemplo, es posible que hayas escrito una fecha en una celda con formato de texto o que los datos se hayan importado o pegado desde un origen de datos externo como texto.
 
@@ -328,13 +393,46 @@ La sintaxis de la función FECHANUMERO tiene los siguientes argumentos:
 
 Texto_de_fecha    Obligatorio. Texto que representa una fecha en el formato de fechas de Excel o una referencia a una celda que contiene texto que representa una fecha en un formato de fechas de Excel. 
 
+- REDONDEAR: Cambiar el número de posiciones decimales mostradas sin cambiar el número.
+Descripción
+La función REDONDEAR redondea un número a un número de decimales especificado.
+Sintaxis: REDONDEAR(número; núm_decimales)
 
-# IR A ESPECIAL:
-El cuadro de ir a especial nos sirve para localizar ciertos tipos de celda dentro de la hoja de cálculo. Podemos acceder al cuadro Ir a especial desde el extremo derecho de la ficha Inicio. Solo tenemos que pulsar en Buscar y seleccionar y luego en Ir a especial. Una vez se abre el cuadro, podemos elegir entre otras opciones, comentarios, constantes, fórmulas, espacios en blanco, etc… 
+La sintaxis de la función REDONDEAR tiene los siguientes argumentos:
+
+número    Obligatorio. Es el número que desea redondear.
+
+núm_decimales    Obligatorio. Es el número de decimales al que desea redondear el argumento número.
+
+- REDONDEAR.MAS: Redondea un número hacia arriba, en dirección contraria a cero.
+
+Sintaxis
+REDONDEAR.MAS(número; núm_decimales)
+
+La sintaxis de la función REDONDEAR.MAS tiene los siguientes argumentos:
+
+Número    Obligatorio. Cualquier número real que se desea redondear hacia arriba.
+
+Núm_decimales    Obligatorio. El número de dígitos al que se desea redondear el número.
+
+- REDONDEAR.MENOS: Redondea un número hacia abajo, en dirección hacia cero.
+
+Sintaxis: REDONDEAR.MENOS(número; núm_decimales)
+
+La sintaxis de la función REDONDEAR.MENOS tiene los siguientes argumentos:
+
+Número    Obligatorio. Cualquier número real que se desea redondear hacia abajo.
+
+Núm_decimales    Obligatorio. El número de dígitos al que se desea redondear el número.
+## Combinar y dividir columnas
+
+- ¿Cómo separar texto en filas y columnas? 
+La funcion se llama "Texto en columnas" nos va a permitir separar texto en filas y columnas los archivos de texto que pueden venir en formatos .csv o para separa texto que pueden venir juntos en una columna como NOMBRE Y APELLIDO.  Primero seleccionamos la columna que contiene el texto, luego nos dirigimos a la pestaña "Datos", se encuentra la seccion "Herramienta de datos" donde esta la opcion "Texto en columnas". Si nuestro texto esta por ejemplo separado por comas, se despliega una ventana donde eberemos seleccion la opcion Delimitados,  en el que podemos elegir que tipo de separados utilizar, en este caso, comas.
+
+- Utilizar la funcion concatenar. 
 
 
-
-# Transformar y reorganizar columnas y filas
+## Transformar y reorganizar columnas y filas
 
 - Transponer:
 Si tiene una hoja de cálculo con datos en columnas que necesita girar para reorganizarla en filas, o viceversa, se usa la funcion TRANSPONER.
@@ -347,6 +445,7 @@ Paso 3: Escribir el rango de las celdas originales.
 Ahora, escriba el rango de las celdas que desea transponer.
 Paso 4: Para finalizar, presione CTRL+MAYÚS+ENTRAR.
 Ahora presione CTRL+MAYÚS+ENTRAR. ¿Por qué? Porque la función TRANSPONER solo se utiliza en fórmulas de matriz y esta es la forma de terminar una fórmula de matriz. En resumen, una fórmula de matriz es una fórmula que se aplica a más de una celda. Como ha seleccionado más de una celda en el paso 1 (lo hizo, ¿verdad?), la fórmula se aplicará a más de una celda.
+
 
 
 # Errores comunes y como solucionarlos
@@ -383,8 +482,7 @@ Este tipo de error indica que el valor que estamos intentando encontrar no exist
 # ¿Cómo saber si un error, es efectivamente un error? 
 Existen algunas funciones de información que nos permiten saber si un valor es efectivamente un error. Las funciones que nos ayuda en esta tarea son: la función ESNOD, la función ESERR y la función ESERROR. 
 
-# Funcion util: ¿Cómo separar texto en filas y columnas? 
-La funcion se llama "Texto en columnas" nos va a permitir separar texto en filas y columnas los archivos de texto que pueden venir en formatos .csv o para separa texto que pueden venir juntos en una columna como NOMBRE Y APELLIDO.  Primero seleccionamos la columna que contiene el texto, luego nos dirigimos a la pestaña "Datos", se encuentra la seccion "Herramienta de datos" donde esta la opcion "Texto en columnas". Si nuestro texto esta por ejemplo separado por comas, se despliega una ventana donde eberemos seleccion la opcion Delimitados,  en el que podemos elegir que tipo de separados utilizar, en este caso, comas.
+
 
 # Formulas utilizadas en negocio
 
@@ -422,17 +520,12 @@ Para obtener el promedio ponderado, debemos hacer la
 SUMAPRODUCTO(rango_valores; rango_ponderaciones)/SUMA(rango_ponderaciones)
 
 
+# Funciones de Google Sheets
 
-# IMPORTRANGE
-# QUERY
-# FILTER
-# COCIENTE(QUOTIENT)
-# FACT
-# POWER
-# PRODUCTO(PRODUCT)
-# REDONDEAR(ROUND)
-# RAIZ(SQRT)
-# RESIDUO(MOD
+- IMPORTRANGE
+- QUERY
+- FILTER
+- ARRAY FORMULA
 
 
 
