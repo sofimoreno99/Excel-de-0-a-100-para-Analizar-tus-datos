@@ -97,7 +97,7 @@ Sintaxis: =MAX(número1, [número2], ...)
 - DESVESTA: Calcula la desviación estándar de una muestra. La desviación estándar es la medida de la dispersión de los valores respecto a la media (valor promedio).
 Sintaxis: =DESVESTA(valor1, [valor2], ...)
 
--VAR: Calcula la varianza de una muestra.
+- VAR: Calcula la varianza de una muestra.
 Sintaxis: =VAR(número1,[número2],...)
 
 # Funciones Lógicas
@@ -214,10 +214,6 @@ Núm_de_serie: Obligatorio. Es la fecha del año que desea buscar. Debe especifi
 - HORA: Sintaxis: DIA(núm_de_serie). IDEM AÑO.
 - MINUTO: Sintaxis: MINUTO(núm_de_serie). IDEM AÑO.
 
- FECHANUMERO: 
-
-
-# IR A ESPECIAL
 
 
 # Caracteres comodin
@@ -257,10 +253,100 @@ Cuando hablamos de los tipos de referencia, estamos hablando de los tipos de com
 - REFERENCIA ABSOLUTA: Hay ocasiones en las que necesitamos “fijar” la referencia a una celda de manera que permanezca igual aún después de ser copiada. Si queremos impedir que Excel modifique las referencias de una celda al momento de copiar la fórmula, entonces debemos convertir una referencia relativa en absoluta y eso lo podemos hacer anteponiendo el símbolo “$” a la letra de la columna y al número de la fila de la siguiente manera: si seguimos con el ejemplo anterior si en la celda C1 escribimos la formula = $A$1 + $B$1, y copiamos la formula a la celda C2, la operacion que se va a realizar va a seguir siendo con las celdas A1 y B1 ya que las hemos "fijado". 
 
 - REFERENCIA MIXTA: Es similar a la referencia absoluta ya que fijamos una parte de la celda referenciada, por ejemplo su numero de fila o numero de columna. Por ejemplo: Si en la celda C1 escribimos =$A1 + $B1, lo que estamos fijando es el numero de columna a utilizar, por lo que si copiamos la formula a la celda C2, se realizara la formula con $A2 + $B2.
+
 # Herramientas para limpieza de datos
+
+
 # - Formato condicional
 El formato condicional cambia el aspecto de un rango de celdas en función de una condición (o criterios). Puede usar formato condicional para resaltar celdas que contienen valores que cumplen cierta condición. También puede aplicar formato a un rango de celdas y variar el formato exacto cuando varía el valor de cada celda.
-# Eliminar duplicados 
+
+# Eliminar duplicados
+ Use el formato condicional para buscar y resaltar datos duplicados o filtrar duplicados primero. De esa manera puede revisar duplicados y decidir si desea eliminarlos.
+ Cuando use la característica Quitar duplicados, los datos duplicados se eliminarán de manera permanente. Antes de eliminar los duplicados, es una buena idea copiar los datos originales a otra hoja de cálculo para que no pierda ninguna información de forma accidental.
+
+Primero: seleccione el rango de celdas con valores duplicados que desea quitar.
+Segundo: Haga clic en Datos > Quitar duplicados y, a continuación, debajo de Columnas, active o desactive las columnas donde desea eliminar los duplicados.
+Tercero: Haga click en aceptar.
+
+# BUSCAR Y REEMPLAZAR
+
+# Cambiar a mayuscula, minuscula o nompropio.
+
+
+
+# Quitar espacios y caracteres no imprimibles del texto
+
+A veces los valores de texto contienen caracteres de espacio incrustado en la primera parte, al final o en varios sitios.
+
+A menudo, estos caracteres pueden producir resultados inesperados al ordenar, filtrar o buscar. 
+
+- Función ESPACIOS
+
+Elimina los espacios del texto, excepto el espacio normal que se deja entre palabras. Utiliza ESPACIOS en texto procedente de otras aplicaciones que pueda contener un espaciado irregular.
+
+Sintaxis
+
+ESPACIOS (texto)
+
+La sintaxis de la función ESPACIOS tiene los siguientes argumentos:
+
+Texto Obligatorio. Es el texto del que deseas quitar espacios.
+
+- Funcion SUSTITUIR
+
+Sustituye texto_original por texto_nuevo dentro de una cadena de texto. Utiliza SUSTITUIR para reemplazar texto específico en una cadena de texto.
+
+Sintaxis
+
+SUSTITUIR (texto, texto_original, texto_nuevo, [núm_de_ocurrencia])
+
+La sintaxis de la función SUSTITUIR tiene los siguientes argumentos:
+
+Texto Obligatorio. Es el texto o la referencia a una celda que contiene el texto en el que deseas sustituir caracteres.
+
+Texto_original Obligatorio. Es el texto que deseas sustituir.
+
+Texto_nuevo Obligatorio. Es el texto por el que deseas reemplazar el texto_original.
+
+Núm_de_ocurrencia Opcional. Especifica la instancia de texto_original que se desea reemplazar por texto_nuevo. Si especifica el argumento núm_de_ocurrencia, solo se remplaza esa instancia de texto_original. De lo contrario, todas las instancias de texto_original en texto se sustituirán por texto_nuevo.
+
+
+# Convertir fechas almacenadas como texto en fechas
+
+A veces, las fechas pueden adquirir formato de texto y almacenarse como texto en las celdas. Por ejemplo, es posible que hayas escrito una fecha en una celda con formato de texto o que los datos se hayan importado o pegado desde un origen de datos externo como texto.
+
+Las fechas con formato de texto se alinean en una celda a la izquierda (en lugar de a la derecha)
+
+- FECHANUMERO: convierte una fecha almacenada como texto en un número de serie que Excel reconoce como fecha. Para ver un número de serie como una fecha, debe aplicar un formato de fecha a la celda. 
+¿Qué es un número de serie de Excel?
+Excel almacena las fechas como números de serie secuenciales para que se puedan usar en cálculos. De forma predeterminada, el 1 de enero de 1900 es el número de serie 1 y el 1 de enero de 2008, que es el número de serie 39448 porque es 39.448 días después del 1 de enero 1900. Para copiar la fórmula de conversión en un rango de celdas contiguas, selecciona la celda que contiene la fórmula introducida y, a continuación, arrastra el controlador de relleno  un rango de celdas vacías que coincida en tamaño con el rango de celdas que contiene las fechas de texto. En la pestaña Inicio, haz clic en el selector de la ventana emergente junto a número.
+En el cuadro Categoría, haz clic en Fecha y, en la lista Tipo, haz clic en el formato de fecha que desees.
+
+Sintaxis:FECHANUMERO(texto_de_fecha)
+
+La sintaxis de la función FECHANUMERO tiene los siguientes argumentos:
+
+Texto_de_fecha    Obligatorio. Texto que representa una fecha en el formato de fechas de Excel o una referencia a una celda que contiene texto que representa una fecha en un formato de fechas de Excel. 
+
+
+# IR A ESPECIAL:
+El cuadro de ir a especial nos sirve para localizar ciertos tipos de celda dentro de la hoja de cálculo. Podemos acceder al cuadro Ir a especial desde el extremo derecho de la ficha Inicio. Solo tenemos que pulsar en Buscar y seleccionar y luego en Ir a especial. Una vez se abre el cuadro, podemos elegir entre otras opciones, comentarios, constantes, fórmulas, espacios en blanco, etc… 
+
+
+
+# Transformar y reorganizar columnas y filas
+
+- Transponer:
+Si tiene una hoja de cálculo con datos en columnas que necesita girar para reorganizarla en filas, o viceversa, se usa la funcion TRANSPONER.
+Sintaxis: 
+Paso 1: Seleccionar celdas en blanco
+En primer lugar seleccione varias celdas en blanco. Pero asegúrese de seleccionar el mismo número de celdas que en el conjunto de celdas original, pero en la dirección contraria.
+Paso 2: Escribir =TRANSPONER(
+Con las mismas celdas en blanco seleccionadas, escriba: =TRANSPONER()
+Paso 3: Escribir el rango de las celdas originales.
+Ahora, escriba el rango de las celdas que desea transponer.
+Paso 4: Para finalizar, presione CTRL+MAYÚS+ENTRAR.
+Ahora presione CTRL+MAYÚS+ENTRAR. ¿Por qué? Porque la función TRANSPONER solo se utiliza en fórmulas de matriz y esta es la forma de terminar una fórmula de matriz. En resumen, una fórmula de matriz es una fórmula que se aplica a más de una celda. Como ha seleccionado más de una celda en el paso 1 (lo hizo, ¿verdad?), la fórmula se aplicará a más de una celda.
 
 
 # Errores comunes y como solucionarlos
@@ -300,12 +386,53 @@ Existen algunas funciones de información que nos permiten saber si un valor es 
 # Funcion util: ¿Cómo separar texto en filas y columnas? 
 La funcion se llama "Texto en columnas" nos va a permitir separar texto en filas y columnas los archivos de texto que pueden venir en formatos .csv o para separa texto que pueden venir juntos en una columna como NOMBRE Y APELLIDO.  Primero seleccionamos la columna que contiene el texto, luego nos dirigimos a la pestaña "Datos", se encuentra la seccion "Herramienta de datos" donde esta la opcion "Texto en columnas". Si nuestro texto esta por ejemplo separado por comas, se despliega una ventana donde eberemos seleccion la opcion Delimitados,  en el que podemos elegir que tipo de separados utilizar, en este caso, comas.
 
+# Formulas utilizadas en negocio
+
+- Variación porcentual
+Calcula incrementos y disminuciones porcentuales
+
+Fórmula:
+
+(porcentaje final - porcentaje inicial)/porcentaje inicial
+
+- Aplicar porcentaje de incremento y descuentos
+Es la fórmula que utilizamos cuando queremos aplicar IVA y otros impuestos.
+
+Fórmula:
+
+precio inicial + precio inicial * porcentaje
+
+Para aplicar descuentos, cambiamos el signo + por -
+
+- Promedio ponderado
+Normalmente, cuando se calcula un promedio, todos los números tienen el mismo peso. Es decir, los números se suman juntos y se dividen por la cantidad de valores. Con un promedio ponderado cada valor se le asigna una ponderación, por lo tanto algunos valores influyen más en el resultado que otros.
+
+Dicho lo anterior, podemos decir que el promedio ponderado se utiliza cuando dentro de una serie de datos, uno de los valores tiene una mayor importancia o hay un dato con mayor peso que el resto. Además, nos ayuda a establecer dicho peso, a través del método conocido como ponderación y utilizar este valor para realizar el cálculo promedio.
+
+La fórmula general es:
+
+(valor1 * ponderación1 + valor2 * ponderación2 + ...)/(ponderación1 + ponderación2…)
+
+La planilla de cálculo nos ofrece la posibilidad de calcular el promedio ponderado combinando dos funciones: la ya conocida SUMA() más SUMAPRODUCTO()
+
+SUMAPRODUCTO() calcula la suma de las multiplicaciones de los datos correspondientes de dos intervalos del mismo tamaño. 
+
+Para obtener el promedio ponderado, debemos hacer la
+
+SUMAPRODUCTO(rango_valores; rango_ponderaciones)/SUMA(rango_ponderaciones)
+
 
 
 # IMPORTRANGE
 # QUERY
 # FILTER
-
+# COCIENTE(QUOTIENT)
+# FACT
+# POWER
+# PRODUCTO(PRODUCT)
+# REDONDEAR(ROUND)
+# RAIZ(SQRT)
+# RESIDUO(MOD
 
 
 
