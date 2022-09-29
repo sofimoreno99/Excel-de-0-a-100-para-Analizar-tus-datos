@@ -528,4 +528,7 @@ SUMAPRODUCTO(rango_valores; rango_ponderaciones)/SUMA(rango_ponderaciones)
 - ARRAY FORMULA
 
 
+GOAL SEEK
+MACROS
+PIVOT 
 
